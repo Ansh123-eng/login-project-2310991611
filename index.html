@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return handleLogin()">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+    </form>
+    <h3>• For employee - </h3>
+    <h4>Id = employee</h4>
+    <h4>Password = 123</h4>
+    <h3>• For admin - </h3>
+    <h4>Id = admin</h4>
+    <h4>Password = 123</h4>
+</div>
+
+<script>
+    function handleLogin() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate login validation
+        if (username === 'admin' && password === '123') {
+            window.location.href = 'admin.html';  // Redirect to admin page
+        } else if (username === 'employee' && password === '123') {
+            window.location.href = 'employee.html';  // Redirect to employee page
+        } else {
+            alert('Invalid login credentials');
+        }
+
+        return false;  // Prevent form submission
+    }
+</script>
+
+</body>
+</html>
